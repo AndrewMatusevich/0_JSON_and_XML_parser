@@ -20,8 +20,10 @@ class MainActivity: AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun downlandXMLButton(view: View) {
-        Toast.makeText(this,"Pardon! \n It's not ready yet ", Toast.LENGTH_SHORT).show()
+        FillDataBaseByXMLUseCase().invoke()
+        openNextActivity()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

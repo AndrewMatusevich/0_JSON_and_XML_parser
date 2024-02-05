@@ -41,8 +41,12 @@ android {
 }
 
 dependencies {
+    // json parser
     implementation("com.google.code.gson:gson:2.8.9")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
+
+    // xml parser
+    implementation ("org.simpleframework:simple-xml:2.7.1")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
