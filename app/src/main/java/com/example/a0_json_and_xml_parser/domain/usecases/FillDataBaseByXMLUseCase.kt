@@ -20,29 +20,6 @@ private val ns: String? = null
 class FillDataBaseByXMLUseCase(private val newsRepository : NewsRepository = NewsRepositoryImpl(Storage)) {
     @RequiresApi(Build.VERSION_CODES.O)
     operator fun invoke(){
-        //var arrayOfNews: ArrayList<News> = ArrayList()
-        //val client = OkHttpClient()
-//
-        //val request = Request.Builder()
-        //        .url("https://api2.kiparo.com/static/it_news.xml")
-        //        .build()
-        //Thread{
-        //    val response: Response = client.newCall(request).execute()
-        //    if (!response.isSuccessful) { throw IOException() }
-        //    val xmlString = response.body!!.string()
-//
-        //    val serializer : Serializer = Persister()
-        //    serializer.read(News::class,xmlString)
-//
-        //    val factory = XmlPullParserFactory.newInstance()
-        //    factory.isNamespaceAware = true
-        //    val xpp = factory.newPullParser()
-        //    xpp.setInput(xmlString.reader())
-        //    var eventType = xpp.eventType
-//
-//
-        //}.start()
-
         Thread{
                 newsRepository.fillDataBase(parse(URL("https://api2.kiparo.com/static/it_news.xml").openStream()))
         }.start()
